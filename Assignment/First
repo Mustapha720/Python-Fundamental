@@ -1,0 +1,71 @@
+>>What is in-built python function? (Explain with example)
+Solution:
+An inbuilt Python function is a function that comes pre-defined and readily available in Python without the need for importing any external modules. These functions are part of Python's standard library and can be used directly in your code. 
+
+Examples of inbuilt Python functions include:
+
+1. **`print()`** - Outputs text to the console.
+2. **`len()`** - Returns the length (number of items) of an object like a list, tuple, or string.
+3. **`type()`** - Returns the type of an object.
+4. **`input()`** - Reads a line of text from the user.
+5. **`sum()`** - Returns the sum of all items in an iterable.
+6. **`max()`** - Returns the largest item in an iterable or the largest of two or more arguments.
+7. **`min()`** - Returns the smallest item in an iterable or the smallest of two or more arguments.
+8. **`abs()`** - Returns the absolute value of a number.
+9. **`sorted()`** - Returns a sorted list from the items in an iterable.
+10. **`range()`** - Generates a sequence of numbers.
+
+These functions are essential tools that can help simplify many common programming tasks in Python.
+
+
+>>What is Concatenation? (Explain with example)
+Solution:
+Concatenation is the process of joining two or more strings or sequences together to form a single string or sequence. In Python, concatenation is typically done using the `+` operator when working with strings.
+
+### Example with Strings:
+```python
+# Concatenating two strings
+str1 = "Hello, "
+str2 = "World!"
+result = str1 + str2
+
+print(result)
+```
+**Output:**  
+`Hello, World!`
+
+Concatenation is a common operation in programming, especially when constructing strings or combining data from multiple sources.
+
+
+>>What is Variable?
+Solution:
+A variable in programming is a symbolic name or a reference that points to a value stored in the computer's memory. Variables are used to store, retrieve, and manipulate data throughout the execution of a program.
+Variable serves as a container for storing values.
+### Example in Python:
+```python
+# Declaring and assigning a value to a variable
+age = 25
+name = "Alice"
+
+# Using the variables
+print("Name:", name)
+print("Age:", age)
+
+# Changing the value of a variable
+age = 26
+print("Updated Age:", age)
+```
+**Output:**
+```
+Name: Alice
+Age: 25
+Updated Age: 26
+```
+
+In this example:
+- `age` and `name` are variables.
+- `age = 25` assigns the integer value `25` to the variable `age`.
+- `name = "Alice"` assigns the string `"Alice"` to the variable `name`.
+- The values stored in these variables can be accessed and modified later in the program.
+
+Variables are fundamental in programming as they allow you to store, modify, and work with data dynamically.
