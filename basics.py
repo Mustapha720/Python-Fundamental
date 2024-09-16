@@ -164,3 +164,27 @@ if question in ans:
 else:
     print('Oh noo', score)
 """
+
+
+# name='dustapha oluwadarasimi'
+# print(len(name))
+# print(name.capitalize())
+# name[0]='M'
+# print(name)
+# print(name.replace("d", "M", 1))
+
+# Indexing
+                # 0   1    2   3   4   5   6   7   8   9   10   11  12
+                # O   l    u   w   a   d   a   r   a   s   i    m   i
+                #-13 -12  -11 -10  -9 -8  -7  -6  -5  -4  -3   -2  -1
+student_name='Oluwadarasimi'
+# print(student_name[0:-3])
+print(student_name[-13:-4])
+print(student_name[-13:-8])
+print(student_name[-8:-4])
+print(student_name[-8:])
+print(student_name[::2])
+# new_name=student_name[0:9] + "jumilo"
+# new_name=[student_name]
+# new_name=list(student_name)
+# print(type(new_name))

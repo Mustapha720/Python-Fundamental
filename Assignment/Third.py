@@ -116,3 +116,55 @@ else:
 
 print('Total',score)
 """
+
+
+
+
+# Define questions and correct answers
+"""
+questions = [
+    "1. What is the capital of France?",
+    "2. What is the square root of 16?",
+    "3. Who wrote the play 'Romeo and Juliet'?",
+    "4. What is the chemical symbol for water?",
+    "5. How many continents are there on Earth?"
+]
+
+correct_answers = [
+    "paris",          # 1. Capital of France
+    "4",              # 2. Square root of 16
+    "shakespeare",    # 3. Author of "Romeo and Juliet"
+    "h2o",            # 4. Chemical symbol for water
+    "7"               # 5. Number of continents on Earth
+]
+
+# Function to grade the student's answers
+def grade_student(answers):
+    score = 0
+    total_questions = len(questions)
+    
+    # Compare student's answers with correct answers
+    for i in range(total_questions):
+        if answers[i].strip().lower() == correct_answers[i]:
+            score += 1
+    
+    # Calculate the grade percentage
+    grade = (score / total_questions) * 100
+    return score, grade
+
+# Sample student answers
+student_answers = [
+    input(questions[0] + " "),  # Collect answers from the student
+    input(questions[1] + " "),
+    input(questions[2] + " "),
+    input(questions[3] + " "),
+    input(questions[4] + " ")
+]
+
+# Grade the student's answers
+score, grade = grade_student(student_answers)
+
+# Output the result
+print(f"\nYou got {score} out of {len(questions)} correct.")
+print(f"Your grade is: {grade:.2f}%")
+"""
