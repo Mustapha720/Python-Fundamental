@@ -4,11 +4,14 @@ tuple
 set
 dictionary
 """
+
+
+# LIST
 # Creating a list in python
-list_of_item= ['1', 3j, 6.8, True, ['Temi', 'Taiwo']]
-list_of_student= (['kiki', 'bolu', 'tope', ['dara', 'dray']])
-list_of_student1= (['kiki', 'bolu', 'tope', ['dara', 'dray'], 'kiki', 'bolu', 'tope'])
-list_of_student2= ([['kiki', 'bolu', 'tope'], ['dara', 'dray'], ['kiki', 'bolu', 'tope']])
+# list_of_item= ['1', 3j, 6.8, True, ['Temi', 'Taiwo']]
+# list_of_student= (['kiki', 'bolu', 'tope', ['dara', 'dray']])
+# list_of_student1= (['kiki', 'bolu', 'tope', ['dara', 'dray'], 'kiki', 'bolu', 'tope'])
+# list_of_student2= ([['kiki', 'bolu', 'tope'], ['dara', 'dray'], ['kiki', 'bolu', 'tope']])
 
 # print(type(list_of_item))
 # print(type(list_of_student))
@@ -90,3 +93,80 @@ for each in range(0, 3):
 
 # lst1.sort()
 # print(lst1)
+
+
+
+
+
+"""
+# TUPLE
+# fruits=('mango','pawpaw')
+# fruits1=tuple(('mango','pawpaw'))
+# fruits2=('mango','pawpaw', 3j, ('dara', 'temi', 'taiwo'), ['banana', 'apple'], {1, 2, 3, 4,})
+# fruits3=(('mango','pawpaw','cashew'), ('mango','pawpaw'), ())
+# print(type(fruits))
+# print(type(fruits1))
+# print(len(fruits1))
+# print(fruits2[::2])
+# print(type(fruits2))
+# print(len(fruits2))
+# print(fruits2[3])
+
+# for name in fruits2[3]:
+#     print(name)
+
+
+# empolyee=(('Dara', 'mustymoney@gmail.com', 'Jin_Tempest', 'Male'), ('Taiwo', 'taiwo123@gmail.com', 'liegeman', 'Male'), ('Temi','iyagbogbo@gmail.com','Tom_boy','Female'), ('Dara', 'mustymoney@gmail.com', 'Jin_Tempest', 'Male'))
+
+# empolyee1, *others, empolyee3 = empolyee
+# print(empolyee1)
+# print(others)
+# print(empolyee9)
+
+# empolyee1, empolyee2, empolyee3 = empolyee
+# print(empolyee)
+
+# for name, email, username, gender in empolyee:
+#     print('Name: ',name)
+    # print('Email: ',email)
+    # print('User_Name: ', username)
+    # print('Gender: ', gender)
+
+x=0
+# for _, email, _, _ in empolyee:
+x+=1
+#     print('Name: ',name)
+    print('Email: ', {x},email)
+    # print('User_Name: ', username)
+    # print('Gender: ', gender)
+
+# concatenation in tuple
+# fruits3= fruits + fruits1
+# print(fruits3)
+
+# Deleting in tuple
+# print(fruits2)
+# del fruits2
+# print(fruits2)
+"""
+
+
+
+
+"""
+# SET
+set1={1, 4,6, 2}
+set2=set((1, 2, 3, 4))
+# set1={1, 2, 3, 4}
+# print(type(set1))
+# print(type(set2))
+# set1.add(56)
+# set1.update((56, 79))
+# set1.remove((79))
+# print(set1)
+# set3=set1.copy()
+# set3=set1.intersection(set2)
+# set3=set1.difference(set2)
+# set3=set1.issubset(set2)
+# print(set3)
+"""
