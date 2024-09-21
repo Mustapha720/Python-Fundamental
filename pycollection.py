@@ -170,3 +170,43 @@ set2=set((1, 2, 3, 4))
 # set3=set1.issubset(set2)
 # print(set3)
 """
+
+
+
+
+
+
+
+# DICTIONARY
+# How to create a dictionary
+electronic={"Laptop" : "Lenovo", "Phone" : "Samsung", "MIFI": "MTN", "Car": "BMW i4",}
+electronic1=dict([(1, "HP"), (2, "DEL")])
+electronic2=dict(fruit="mango", fruit1="orange")
+# electronic.popitem()
+# electronic.pop("Laptop")
+# del electronic["MIFI"]
+# print(electronic)
+# print(type(electronic))
+# print(type(electronic1))
+# print(electronic1[2])
+# print(electronic1.keys())
+# print(electronic1.values())
+# print(electronic1.items())
+# print(electronic["Laptop"])
+
+# for keys, values in electronic.items():
+    # print(keys)
+
+# electronic.update(dict(year=2023, color="white"))
+# electronic.update(dict(year=2024, color="black"))
+# print(electronic)
+
+
+score=0
+questions={input("What is the capital of nigeria a) ogbomoso  b) abuja" ): 'b'}
+# value={input("Your answer: ")}
+for values in questions:
+    score+=5
+    print("correct")
+else:
+    print('n')

@@ -30,3 +30,19 @@ elif choice == '6':
     print(set8)
 else:
     print("Error")
+
+
+
+"""
+LECTURER'S SOLUTION
+list_of_sets = []
+num_of_set=int(input('HOW MANY SET DO YOU WANT TO WORK WITH? '))
+for each_set in range(1, num_of_set+1):
+    set_items=[]
+    items=int(input(f'HOW MANY VALUES ARE IN SET {each_set}? '))
+    for itm in range(1, items+1):
+        item=input(f'ENTER VALUE {itm}: ')
+        set_items.append(item)
+    list_of_sets.append(set(set_items))
+print(list_of_sets)
+"""
