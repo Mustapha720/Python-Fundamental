@@ -205,7 +205,7 @@ electronic2=dict(fruit="mango", fruit1="orange")
 score=0
 questions={input("What is the capital of nigeria a) ogbomoso  b) abuja" ): 'b'}
 # value={input("Your answer: ")}
-for values in questions:
+for values in questions.items:
     score+=5
     print("correct")
 else:

@@ -1,127 +1,48 @@
-student1=input('Your name: ')
-pass_word1=input("Your password: ")
-student2=input('Your name: ')
-pass_word2=input("Your password: ")
-student3=input('Your name: ')
-pass_word3=input("Your password: ")
-student4=input('Your name: ')
-pass_word4=input("Your password: ")
-student5=input('Your name: ')
-pass_word5=input("Your password: ")
-
-exam=input("\n \nAre you ready to take the exam now? ")
-ans=('Yes', 'yes')
-if exam in ans:
-    pass
-else:
-    quit("")
-    # break
-
-
-student=input('\nYour name: ')
-pass_word=input("Your password: ")
-pass_words=('Dara1', 'dara1', 'Temi', 'temi', 'taiwo', 'Taiwo', 'dara', 'Dara')
-if pass_word in pass_words:
-    print('You are qualified to take the exam')
-    pass
-else:
-    print('Incorrect password.')
-    quit("")
-
-
-
-
-
 questions = {
-    "1. What is the capital of France?\n (a)Paris\n (b)New York\n (c)America": "a",
-    "2. What has to be broken before you can use it?\n (a)Ball\n (b)Apple\n (c)Egg": "c",
-    "3. Is 'print' an inbuilt python function?\n (a)Maybe\n (b)No\n (c)Yes": "c",
-    "4. What is the full meaning of IDE?\n (a)Independent\n (b)Integrated Development Environment\n (c)IDE": "b",
-    "5. ______ is true when both operand are true?\n (a)AND\n (b)NOT\n (c)OR": "a",
-    "6. What variable convention is this 'NameOfStudent'?\n (a)Camel casing\n (b)Snake casing\n (c)Pascal casing": "c",
-    "7. Python is ______ language?\n (a)Not a language\n (b)A High-level language\n (c)A Low-level language": "b",
-    "8. ": "",
-    "9. ": "",
-    "10. ": ""
+    "\n1. What is the capital of France?\n (a)Paris\n (b)New York\n (c)America\n (d)Washington": "a",
+    "2. What has to be broken before you can use it?\n (a)Ball\n (b)Apple\n (c)Egg\n (d)Chair": "c",
+    "3. Is 'print' an inbuilt python function?\n (a)Maybe\n (b)No\n (c)Yes\n (d)Neither": "c",
+    "4. Which operator is used for exponentiation in Python?\n (a)^\n (b)*\n (c)%\n (d)**": "d",
+    "5. ______ is true when both operand are true?\n (a)AND\n (b)NOT\n (c)OR\n (d)XOR": "a",
+    "6. What variable convention is this 'NameOfStudent'?\n (a)Camel casing\n (b)Snake casing\n (c)Pascal casing\n (d)Donkey casing": "c",
+    "7. Python is ______ language?\n (a)Not a language\n (b)A High-level language\n (c)A Low-level language\n (d)Don't know": "b",
+    "8. How do you insert an element into a list in Python?\n (a)list.add()\n (b)list.push()\n (c)list.append()\n (d)list.extend()": "c",
+    "9. What is the correct way to check if two values are equal in Python?\n (a)==\n (b)=\n (c)!=\n (d)===": "a",
+    "10. Which of the following data types is mutable in Python?\n (a)Tuple\n (b)String\n (c)Int\n (d)List": "d"
 }
 
-score=0
-for question, answer in questions.items():
-    print(question)
-    user_answer = input("Your answer: ").lower()
 
-    if answer in user_answer:
-        score+=10
-        print('Correct')
-    else:
-        print('Wrong')
+list_of_student={}
 
-print(f"Your total score is {score} / 100")
+for each in range(1,6):
+    student_name= input("Your Name: ")
+    student_matric_number= input("Your Matric Number: ")
+    list_of_student[student_matric_number]= student_name
+print(list_of_student)
 
+for each in range(1,6):
+    student_matric_number = input("Your Matric Number: ")
 
+    if student_matric_number not in list_of_student:
+        print(f"You have not registered\n")
+        continue
+    are_you_ready = input("Are you ready to do your exam? (Yes/No): ").strip().lower()
+    if are_you_ready !='yes':
+        print('Test terminated.')
+        continue
 
+    score=0
+    for question, answer in questions.items():
+        print(question)
+        user_answer=input('Your answer: ').strip().lower()
 
+        if user_answer == answer:
+            score+=10
 
+    print(f'Your total score is {score} / 100')
 
-"""
-# CBT Example: Questions and Answers in a Dictionary
-
-# Displaying instructions
-print("Welcome to the Computer-Based Test (CBT)")
-print("Please answer the following questions:\n")
-
-# Dictionary to store questions and answers
-questions = {
-    "What is the capital of France?": "paris",
-    "What is the square root of 64?": "8",
-    "Who wrote 'Hamlet'?": "shakespeare"
-}
-
-# Variable to keep track of score
-score = 0
-
-# Loop through the dictionary and ask each question
-for question, correct_answer in questions.items():
-    print(question)  # Print the question
-    user_answer = input("Your answer: ").lower()  # Get user's answer and make it lowercase
-
-    # Check if the answer is correct
-    if user_answer == correct_answer:
-        print("Correct!\n")
-        score += 1  # Increase the score if the answer is correct
-    else:
-        print(f"Wrong! The correct answer is {correct_answer.capitalize()}.\n")
-
-# Final score and summary
-print(f"Test completed. You got {score} out of {len(questions)} correct!")
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# question={input('What is the capital of Nigeria? \n(a)Tokyo \n(b)Ibadan \n(c)Abuja'): 'b'}
-# ans=input("Your answer: ")
-# for values in ans:
-    # print('Correct')
-# else:
-    # print("n")
-# if values not in ans:
-    # print('Wrong')
+    if each < 4:
+        next_student = input("Is the next student ready? (Yes/No): ").strip().lower()
+        if next_student != "yes":
+            print("Test Terminated")
+            break
