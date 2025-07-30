@@ -41,11 +41,12 @@ result = val1 + val2
 print(result)
 """
 
-"""
+
 val1 = (2, 3, 4)
 result = sum(val1)
-print=(result)
-"""
+print(result)
+print("Hi")
+
 
 
 # fruits='cashew','mango'
@@ -105,7 +106,7 @@ Operators
 > Greater than: True if the left operand is greater than the right x > y
 < Less than: True if the left operand is greater than the right x < y
 == Equal to: True if both operands are equal x == y
-!= Equal to: True if both operands are equal x != y
+!= Not equal to: True if both operands are equal x != y
 >= Greater than or equal to: True if the left operand is greater than or equal to the right operand x >= y
 <= Less than or equal to: True if the left operand is greater than or equal to the right operand x <= y
 """
@@ -179,11 +180,11 @@ else:
                 #-13 -12  -11 -10  -9 -8  -7  -6  -5  -4  -3   -2  -1
 student_name='Oluwadarasimi'
 # print(student_name[0:-3])
-print(student_name[-13:-4])
-print(student_name[-13:-8])
-print(student_name[-8:-4])
-print(student_name[-8:])
-print(student_name[::2])
+# print(student_name[-13:-4])
+# print(student_name[-13:-8])
+# print(student_name[-8:-4])
+# print(student_name[-8:])
+# print(student_name[::2])
 # new_name=student_name[0:9] + "jumilo"
 # new_name=[student_name]
 # new_name=list(student_name)
