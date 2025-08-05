@@ -36,25 +36,35 @@ mult_table(value1, value2)
 """
 
 
-pin = []
-def register():
-    user_name = input("Your Username: ")
-    email = input("Input your email: ")
-    new_pin = input("Input your pin: ")
-    print(f"Welcome {user_name}")
-register()
+# ClassWork
+# def register():
+#     user_name = input("Your Username: ")
+#     email = input("Input your email: ")
+#     new_pin = input("Input your pin: ")
+#     print(f"Welcome {user_name}")
+# register()
 
-def question():
-    print("What is ----")
+# def question():
+#     print("What is ----")
 
-def option():
-    print("1. Take test")
-    print("2. Log out")
-    option = input("Pick an option: ")
-    if option == '1':
-        question()
-    elif option == '2':
-        exit()
-    else:
-        exit()
-option()
+# def option():
+#     print("1. Take test")
+#     print("2. Log out")
+#     option = input("Pick an option: ")
+#     if option == '1':
+#         question()
+#     elif option == '2':
+#         exit()
+#     else:
+#         exit()
+# option()
+
+
+def student_names(*names):
+    print(names)
+    # return
+    # pass
+student_names('Temi', 'Taiwo', 'Dara', 'Dray')
+
+def login():
+    pass
