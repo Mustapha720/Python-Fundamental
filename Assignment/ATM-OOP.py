@@ -2,7 +2,62 @@ import time
 import random as rd
 
 
-class ATM():
+class LoanApp():
+    def __init__(self):
+        self.loan_amount = []
+        self.interest = []
+
+    def loan(self):
+        amount = int(input("How much do you want to borrow/loan: "))
+        self.loan_amount.append(amount)
+        self.interest = amount + (amount * 0.10)
+        print(f"10% has been added to {amount}")
+        print(f"You have successfully borrowed/loaned {self.interest}")
+
+    def loan_repayment(self):
+        amount = int(input("How much do you want to pay: "))
+        self.interest -= amount
+        if self.interest == 0.0:
+            print(f"You have successfully repaid your debt!")
+        else:
+            print(f"You still have {self.interest} to pay")
+
+    def loan_calculator(self):
+        amount = int(input("How much: "))
+        duration = int(input("Duration: "))
+        interest = amount + (amount * 0.10)
+        total = interest / duration
+        print(f"Total amount with interest(10%) is: {interest} \nYou'll pay {total} for {duration} month")
+
+    def  loan_menu(self):
+        print("""
+                -------Loan Menu-------
+                1. Loan
+                2. Loan Repayment
+                3. Loan Calculator
+                4. Exit
+                """)
+
+    def menu_loan(self):
+        while True:
+            self.loan_menu()
+            choice = input("Select an option(1-3): ")
+            if choice == '1':
+                self.loan()
+            elif choice == '2':
+                self.loan_repayment()
+            elif choice == '3':
+                self.loan_calculator()
+            elif choice == '4':
+                return
+            else:
+                break
+
+l = LoanApp()
+
+
+
+class Bank(LoanApp):
     def __init__(self, name, Acc_num):
         self.name = name
         self.account_number = Acc_num
@@ -157,7 +212,8 @@ class ATM():
             2. Deposit
             3. Transfer
             4. Withdraw
-            5. Exit
+            5. Loan
+            6. Exit
             """)
     
     def atm_machine(self):
@@ -173,11 +229,13 @@ class ATM():
             elif choice == '4':
                 self.withdraw()
             elif choice == '5':
+                self.menu_loan()
+            elif choice == '6':
                 print("Thank you for using our bank!! Have a nice day!")
                 exit()
             else:
                 break
-atm = ATM("Default_Name", "1234567")
+atm = Bank("Default_Name", "1234567")
 atm.register()
 atm.confirmation()
 # atm.menu()
