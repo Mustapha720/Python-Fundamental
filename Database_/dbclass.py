@@ -1,6 +1,11 @@
 # pip install pymysql
 
+import os
 import pymysql as pyms
+from dotenv import load_dotenv
+load_dotenv()
 
-my_con = pyms.connect(host = '127.0.0.1', user = 'root', password = 'Musty@@@@@12345')
+dbPass = os.getenv("DB_PASS")
+
+my_con = pyms.connect(host = '127.0.0.1', user = 'root', password = dbPass)
 print('Connection Successful')
