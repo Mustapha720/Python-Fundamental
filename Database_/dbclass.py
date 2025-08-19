@@ -68,4 +68,4 @@ for i in range(3):
     val = (Address, pass_word, fullname, phone)
     myCursor.execute(my_query, val)
     my_con.commit()
-print(myCursor.rowcount, "Record inserted")
+    print(myCursor.rowcount, "Record inserted")
