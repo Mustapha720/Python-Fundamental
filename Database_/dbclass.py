@@ -59,13 +59,86 @@ myCursor = my_con.cursor() # Messenger between pc and sql
 # # my_con.cursor()
 # print("Done")
 
-for i in range(3):
-    fullname = input("Your full name: ")
-    Address = input("Your address: ")
-    phone = input("Your phone number: ")
-    pass_word = input("Your password: ")
-    my_query = "INSERT INTO Registration_Table (address, password, full_name, phone_num) VALUES(%s, %s, %s, %s)"
-    val = (Address, pass_word, fullname, phone)
+# for i in range(3):
+#     fullname = input("Your full name: ")
+#     Address = input("Your address: ")
+#     phone = input("Your phone number: ")
+#     pass_word = input("Your password: ")
+#     my_query = "INSERT INTO Registration_Table (address, password, full_name, phone_num) VALUES(%s, %s, %s, %s)"
+#     val = (Address, pass_word, fullname, phone)
+#     myCursor.execute(my_query, val)
+#     my_con.commit()
+#     print(myCursor.rowcount, "Record inserted")
+
+
+# How to fetch from a/the Database
+"""
+my_query = "SELECT * FROM Registration_Table"
+myCursor.execute(my_query)
+for each in myCursor:
+    print(each)
+
+my_query = "SELECT * FROM Registration_Table WHERE address = %s"
+val = "Baby"
+myCursor.execute(my_query, val)
+for each in myCursor:
+    print(each)
+
+my_query = "SELECT * FROM Registration_Table WHERE full_name LIKE '%D%'"
+myCursor.execute(my_query)
+my_reg = myCursor.fetchall()
+print(my_reg)
+
+my_query = "SELECT full_name, phone_num FROM Registration_Table"
+myCursor.execute(my_query)
+for each in myCursor:
+    print(each)
+my_reg = myCursor.fetchall()
+my_reg = myCursor.fetchone() # Only one
+print(my_reg)
+"""
+
+
+# Login validator
+"""
+import time
+count = 0
+while count < 3:
+    fullname = input("Enter your fullname: ").strip()
+    pwd = input("Enter your password: ").strip()
+    my_query = "SELECT full_name, password FROM Registration_Table WHERE full_name = %s AND password = %s"
+    val = (fullname, pwd)
     myCursor.execute(my_query, val)
-    my_con.commit()
-    print(myCursor.rowcount, "Record inserted")
+    reg = myCursor.fetchone()
+    if reg:
+        print("Login successful")
+        break
+    else:
+        count += 1
+        print(f"Incorrect login detail! You have {3 - count}")
+        if count == 3:
+            print("You've exceeded your login attempt. Try again in 10 seconds")
+            time.sleep(10)
+            count = 0
+        continue
+"""
+
+
+# To Update data into the database
+"""
+old_fullname = input("Your old fullname: ")
+new_fullname = input("Your fullname: ")
+my_query = "UPDATE Registration_Table SET full_name = %s WHERE full_name = %s"
+val = (new_fullname, old_fullname)
+myCursor.execute(my_query, val)
+my_con.commit()
+print(myCursor.rowcount, 'Updated')
+"""
+
+# Delete a row
+"""
+my_query = "DELETE FROM Registration_Table WHERE address = 'Darasimi'"
+myCursor.execute(my_query)
+my_con.commit()
+print(myCursor.rowcount, 'Deleted')
+"""
