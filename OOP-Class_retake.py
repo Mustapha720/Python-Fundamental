@@ -61,4 +61,3 @@ class Atm(Bank):
     def activate_pin(self):
         print(f"Welcome to {self.name}, your pin is activated successfully")
 uba_bankapp  = BankApp(name = "United Bank of Africa", location = "Lagos", motto = "Everything we do, we do it well")
-uba_bankapp.
