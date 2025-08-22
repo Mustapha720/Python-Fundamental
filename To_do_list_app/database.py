@@ -19,6 +19,19 @@ my_cursor = my_con.cursor()
 # my_cursor.execute("CREATE TABLE To_do_list_table (task_id INT(4), task VARCHAR(100))")
 # print("Table created")
 
+# query = "ALTER TABLE To_do_list_table CHANGE task_id Task_id INT(5) PRIMARY KEY AUTO_INCREMENT"
+# my_cursor.execute(query)
+
+# my_query = "ALTER TABLE To_do_list_table ADD task_done VARCHAR(100)"
+# my_cursor.execute(my_query)
+
+# To print what's in column task
+# my_cursor.execute("SELECT * FROM To_do_list_table")
+# rows = my_cursor.fetchall()
+# for row in my_cursor:
+#     print(row)
+# my_cursor.close()
+
 
 
 # def get_db():
