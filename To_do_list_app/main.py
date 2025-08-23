@@ -8,7 +8,7 @@ from database import my_cursor
 
 class To_do_list():
     def __init__(self):
-        self.items = []
+        self.items = set()
         self.cursor = my_cursor
         self.con = my_con
 
@@ -19,7 +19,7 @@ class To_do_list():
         for i in range(ask):
             count += 1
             add_item = input("Add a To-do item: ").strip()
-            self.items.append(add_item)
+            self.items.add(add_item)
             query = "INSERT INTO To_do_list_table (task) VALUES(%s)"
             value = (add_item)
             my_cursor.execute(query, value)
