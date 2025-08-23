@@ -14,17 +14,25 @@ class To_do_list():
 
     def add_task(self):
         count = 0
+        num = 0
         print("Please ensure you don't add duplicate items!!!")
         ask = int(input("How many task(s) do you want to add: "))
         for i in range(ask):
-            count += 1
-            add_item = input("Add a To-do item: ").strip()
-            self.items.add(add_item)
-            query = "INSERT INTO To_do_list_table (task) VALUES(%s)"
-            value = (add_item)
-            my_cursor.execute(query, value)
-            my_con.commit() #Saving to the database
-        print(f"{count}, Items added!")
+            num += 1
+            add_item = input(f"Add {num} To-do item: ").strip()
+            query_check = "SELECT * FROM To_do_list_table WHERE task = %s"
+            my_cursor.execute(query_check, (add_item,))
+            exists = my_cursor.fetchone()
+            if exists:
+                print(f"'{add_item}' already exists!")
+                continue
+            if add_item not in self.items:
+                count += 1
+                self.items.add(add_item)
+                query = "INSERT INTO To_do_list_table (task) VALUES (%s)"
+                my_cursor.execute(query, (add_item,))
+                my_con.commit() #Saving to the database
+        print(f"{count}, Item(s) added!")
         # print(self.items)
 
     def view_task(self):
@@ -48,17 +56,21 @@ class To_do_list():
         my_cursor.execute("SELECT task FROM To_do_list_table")
         for row in my_cursor:
             count += 1
+            print("Here are your the items:")
             print(f"{count}. {row[0]}")
         ask = int(input("How many task(s) do you want to delete: "))
+        deleted_count = 0
         for i in range(ask):
-            count = 0
-            count += 1
+            # count = 0
             delete = input("Which task do you want to delete: ")
             query = "DELETE FROM To_do_list_table WHERE task = %s"
-            val = (delete)
-            my_cursor.execute(query, val)
+            # val = (delete)
+            my_cursor.execute(query, (delete,))
             my_con.commit()
-        print(f"{count}, Items deleted")
+            if delete in self.items:
+                self.items.remove(delete)
+            deleted_count += 1
+        print(f"{deleted_count}, Items deleted")
 
     def menu(self):
         print("""

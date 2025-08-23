@@ -32,6 +32,9 @@ my_cursor = my_con.cursor()
 #     print(row)
 # my_cursor.close()
 
+# sql = "DROP DATABASE Todo_List"
+# my_cursor.execute(sql)
+
 
 
 # def get_db():
