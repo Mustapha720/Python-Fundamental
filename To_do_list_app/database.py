@@ -19,6 +19,12 @@ my_cursor = my_con.cursor()
 # my_cursor.execute("CREATE TABLE To_do_list_table (task_id INT(4), task VARCHAR(100))")
 # print("Table created")
 
+# my_cursor.execute("CREATE TABLE Mark_done_table (id INT(4), mark_done VARCHAR(100))")
+# print("Table created")
+
+# query = "ALTER TABLE Mark_done_table CHANGE id Mark_done_id INT(5) PRIMARY KEY AUTO_INCREMENT"
+# my_cursor.execute(query)
+
 # query = "ALTER TABLE To_do_list_table CHANGE task_id Task_id INT(5) PRIMARY KEY AUTO_INCREMENT"
 # my_cursor.execute(query)
 
@@ -34,8 +40,3 @@ my_cursor = my_con.cursor()
 
 # sql = "DROP DATABASE Todo_List"
 # my_cursor.execute(sql)
-
-
-
-# def get_db():
-    # return my_con, my_cursor
