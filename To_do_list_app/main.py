@@ -4,6 +4,7 @@
 # View task
 # Exit
 from colorama import init, Fore, Style
+init(autoreset = True)
 from database import my_con
 from database import my_cursor
 
