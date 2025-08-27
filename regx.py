@@ -1,6 +1,6 @@
 import re
 
-email = "bola@gmail.com"
+email = "@gmail.com"
 # if email.endswith('.com'):
 #     print('Valid email')
 # else:
